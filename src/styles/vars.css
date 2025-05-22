@@ -1,8 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
 :root {
-  --font-default: "DM Sans", sans-serif;
-
-  --cor-tema: #771c1c;
-
-  --grid-gap: 24px;
-  --column-count: 5;
+    --primary-color: #007bff; /* Azul vibrante */
+    --secondary-color: #6c757d; /* Cinza escuro */
+    --background-color: #f8f9fa; /* Fundo claro */
+    --card-background: #ffffff; /* Fundo de cartão branco */
+    --text-color: #343a40; /* Cor de texto padrão */
+    --border-color: #dee2e6; /* Cor de borda */
+    --focus-border-color: #80bdff; /* Cor da borda no foco */
+    --light-gray: #e9ecef;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --font-default: 'Poppins', sans-serif;
 }

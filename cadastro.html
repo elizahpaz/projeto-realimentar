@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cadastro</title>
 
-  <link rel="stylesheet" href="./src/styles/reset.css">
   <link rel="stylesheet" href="./src/styles/vars.css">
   <link rel="stylesheet" href="./src/styles/main.css">
   <link rel="stylesheet" href="./src/styles/forms.css">
@@ -14,87 +13,127 @@
 </head>
 <body>
 
-  <header></header>
-  <h2>Cadastro</h2>
-  <div class="option">
-    <div><input type="radio" id="idEmpresa" name="account-type" value="empresa">
-    <label for="empresa">Empresa</label></div>
-    
-  <div><input type="radio" id="idOng" name="account-type" value="ong">
-    <label for="ong">ONG</label></div>
-  </div>
+  <header class="header">
+    <div class="flex">
+      <a href="index.html" class="logo"><img src="src/assets/logo.png" alt="logo da empresa"></a>
+      <nav class="navbar">
+        <a href="login.html">LOGIN</a>
+        <a href="cadastro.html">CADASTRO</a>
+        <a href="home-empresa.html">HOME-EMPRESA</a>
+        <a href="home-ong.html">HOME-ONG</a>
+      </nav>
+    </div>
+  </header>
+  
+  <div class="registration-container">
+    <h2>Cadastro</h2>
 
-  <div id="formDoar" class="formulario">
-      <label for="nome">Nome social</label>
-      <input type="text" id="idNome">
+    <div class="account-type-options">
+        <div class="radio-group">
+            <input type="radio" id="idEmpresa" name="account-type" value="empresa" checked>
+            <label for="idEmpresa">Empresa</label>
+        </div>
 
-      <label for="cnpj">CNPJ</label>
-      <input type="number" id="idCnpj" minlength="14" maxlength="14">
-
-      <label for="email">E-mail</label>
-      <input type="email" id="idEmail">
-
-      <label for="tel">Telefone</label>
-      <input type="number" id="idTelefone" minlength="14" maxlength="14">
-      
-      <label for="senha">Senha</label>
-      <input type="password" id="idSenha">
-      <hr>
-      <div class="loc">
-        <label for="estado">Estado</label>
-        <input list="estados" id="idEstados">
-        <datalist id="estados">
-          <option value="AC"></option>
-          <option value="AL"></option>
-          <option value="AP"></option>
-          <option value="AM"></option>
-          <option value="BA"></option>
-          <option value="CE"></option>
-          <option value="DF"></option>
-          <option value="ES"></option>
-          <option value="GO"></option>
-          <option value="MA"></option>
-          <option value="MT"></option>
-          <option value="MS"></option>
-          <option value="MG"></option>
-          <option value="PA"></option>
-          <option value="PB"></option>
-          <option value="PR"></option>
-          <option value="PE"></option>
-          <option value="PI"></option>
-          <option value="RJ"></option>
-          <option value="RN"></option>
-          <option value="RS"></option>
-          <option value="RO"></option>
-          <option value="RR"></option>
-          <option value="SC"></option>
-          <option value="SP"></option>
-          <option value="SE"></option>
-          <option value="TO"></option>
-        </datalist>
-
-        <label for="cep">CEP</label>
-        <input type="number" id="idCep"> <br>
-
-        <label for="rua">Rua</label>
-        <input type="text" id="idRua"> <br>
-
-        <label for="nro">N°</label>
-        <input type="number" id="idNro">
-
-        <label for="bairro">Bairro</label>
-        <input type="text" id="idBairro">
-      </div>
-
-      <button type="submit" class="btn">Cadastrar</button>
+        <div class="radio-group">
+            <input type="radio" id="idOng" name="account-type" value="ong">
+            <label for="idOng">ONG</label>
+        </div>
     </div>
 
-  <div class="cadastro">
-    <p>Já tem cadastro?</p>
-    <p class="link"><a href="login.html">Clique aqui para entrar</a></p>
+    <form id="registrationForm" class="formulario">
+      <div class="form-group">
+          <label for="idNome">Nome social</label>
+          <input type="text" id="idNome" required>
+      </div>
+
+      <div class="form-group">
+        <label for="idCnpj">CNPJ</label>
+        <input type="text" id="idCnpj" maxlength="18" placeholder="00.000.000/0000-00" required>
+      </div>
+
+      <div class="form-group">
+        <label for="idEmail">E-mail</label>
+        <input type="email" id="idEmail" required>
+      </div>
+
+      <div class="form-group">
+        <label for="idTelefone">Telefone</label>
+        <input type="tel" id="idTelefone" maxlength="15" placeholder="(XX) XXXXX-XXXX" required>
+      </div>
+
+      <div class="form-group">
+        <label for="idSenha">Senha</label>
+        <input type="password" id="idSenha" required>
+      </div>
+
+      <hr class="form-divider">
+
+      <div class="location-fields">
+        <div class="form-group">
+          <label for="idEstados">Estado</label>
+          <input list="estados" id="idEstados" required>
+          <datalist id="estados">
+            <option value="AC"></option>
+            <option value="AL"></option>
+            <option value="AP"></option>
+            <option value="AM"></option>
+            <option value="BA"></option>
+            <option value="CE"></option>
+            <option value="DF"></option>
+            <option value="ES"></option>
+            <option value="GO"></option>
+            <option value="MA"></option>
+            <option value="MT"></option>
+            <option value="MS"></option>
+            <option value="MG"></option>
+            <option value="PA"></option>
+            <option value="PB"></option>
+            <option value="PR"></option>
+            <option value="PE"></option>
+            <option value="PI"></option>
+            <option value="RJ"></option>
+            <option value="RN"></option>
+            <option value="RS"></option>
+            <option value="RO"></option>
+            <option value="RR"></option>
+            <option value="SC"></option>
+            <option value="SP"></option>
+            <option value="SE"></option>
+            <option value="TO"></option>
+          </datalist>
+        </div>
+
+        <div class="form-group">
+          <label for="idCep">CEP</label>
+          <input type="text" id="idCep" maxlength="9" placeholder="XXXXX-XXX" required>
+        </div>
+
+        <div class="form-group">
+          <label for="idRua">Rua</label>
+          <input type="text" id="idRua" required>
+        </div>
+
+        <div class="form-group small-input">
+          <label for="idNro">N°</label>
+          <input type="text" id="idNro" required>
+        </div>
+
+        <div class="form-group">
+          <label for="idBairro">Bairro</label>
+          <input type="text" id="idBairro" required>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-submit">Cadastrar</button>
+    </form>
+
+      <div class="prompt">
+          <p>Já tem cadastro?</p>
+          <p class="link"><a href="login.html">Clique aqui para entrar</a></p>
+      </div>
   </div>
 
-  <footer>Copyright © ReAlimentar. Todos os direitos reservados.</footer>
+  <footer class="footer">Copyright © ReAlimentar. Todos os direitos reservados.</footer>
 
 </body>
 </html>

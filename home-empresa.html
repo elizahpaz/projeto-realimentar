@@ -5,33 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Início</title>
 
+    <link rel="stylesheet" href="src/styles/main.css"/>
+    <link rel="stylesheet" href="src/styles/vars.css"/>
+    <link rel="stylesheet" href="src/styles/home.css"/>
+    <link rel="stylesheet" href="src/styles/media-queries.css"/>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header class="header">
-        <div class="flex">
-            <a href="home-empresa.html"><img src="" alt="logo"></a>
-            <nav class="navbar">
-                <a href="#">Início</a>
-                <a href="#">Histórico</a>
-                <a href="#">Notificações</a>
-                <a href="#">Perfil</a>
-            </nav>
-        </div>
+      <div class="flex">
+        <a href="index.html" class="logo"><img src="src/assets/logo.png" alt="logo da empresa"></a>
+        <nav class="navbar">
+          <a href="index.html">INDEX</a>
+          <a href="#">Histórico</a>
+          <a href="#">Notificações</a>
+          <a href="#">Perfil</a>
+        </nav>
+      </div>
     </header>
 
-    <div>
-        <input type="text" placeholder="Pesquisar">
+    <div class="search-bar-container">
+      <input type="text" placeholder="Pesquisar produtos..." class="search-input">
     </div>
 
-    <section class="produtos">
-        <div>
-            <p>Aqui fica a lista de produtos cadastrados.</p>
-        </div>
+    <section class="products-section">
+      <div class="product-list-placeholder">
+        <p>//Aqui fica a lista de produtos cadastrados.</p>
+      </div>
     </section>
 
-    <div class="novo-produto">
-        <button><i class="fa-solid fa-circle-plus"></i></button>
+    <div class="add-product-button-container">
+      <button class="add-product-button">
+          <i class="fa-solid fa-circle-plus"></i>
+          <span>ADICIONAR NOVO PRODUTO</span>
+      </button>
     </div>
 </body>
 </html>
