@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu perfil</title>
+
+    <link rel="stylesheet" href="./src/styles/vars.css">
+    <link rel="stylesheet" href="./src/styles/main.css">
+    <link rel="stylesheet" href="./src/styles/forms.css">
+    <link rel="stylesheet" href="./src/styles/media-queries.css"/>
+</head>
+<body>
+
+    <div class="infos-container">
+
+        <h2>Editar perfil</h2>
+        <div class="profile-pic">
+            <img src="src/assets/no-photo.png" alt="sem foto de perfil">
+            <input type="file" placeholder="adicionar foto">
+        </div>
+
+        <form id="alterForm" class="formulario">
+        <div class="form-group">
+            <label for="idNome">Nome social</label>
+            <input type="text" id="idNome" disabled value="muda com o cnpj"/>
+        </div>
+
+        <div class="form-group">
+            <label for="idCnpj">CNPJ</label>
+            <input type="text" id="idCnpj" maxlength="18" value="cnpj cadastrado" required>
+        </div>
+
+        <div class="form-group">
+            <label for="idEmail">E-mail</label>
+            <input type="email" id="idEmail" value="e-mail cadastrado" required>
+        </div>
+
+        <div class="form-group">
+            <label for="idTelefone">Telefone</label>
+            <input type="tel" id="idTelefone" maxlength="15" value="tel cadastrado" required>
+        </div>
+
+        <div class="form-group">
+            <label for="idSenha">Senha</label>
+            <input type="password" id="idSenha" value="senha cadastrado" required>
+        </div>
+
+        <hr class="form-divider">
+
+        <div class="location-fields">
+            <div class="form-group">
+            <label for="idEstados">Estado</label>
+            <input list="estados" id="idEstados" value="SP" required>
+            <datalist id="estados">
+                <option value="AC"></option>
+                <option value="AL"></option>
+                <option value="AP"></option>
+                <option value="AM"></option>
+                <option value="BA"></option>
+                <option value="CE"></option>
+                <option value="DF"></option>
+                <option value="ES"></option>
+                <option value="GO"></option>
+                <option value="MA"></option>
+                <option value="MT"></option>
+                <option value="MS"></option>
+                <option value="MG"></option>
+                <option value="PA"></option>
+                <option value="PB"></option>
+                <option value="PR"></option>
+                <option value="PE"></option>
+                <option value="PI"></option>
+                <option value="RJ"></option>
+                <option value="RN"></option>
+                <option value="RS"></option>
+                <option value="RO"></option>
+                <option value="RR"></option>
+                <option value="SC"></option>
+                <option value="SP"></option>
+                <option value="SE"></option>
+                <option value="TO"></option>
+            </datalist>
+            </div>
+
+            <div class="form-group">
+            <label for="idCep">CEP</label>
+            <input type="text" id="idCep" maxlength="9" value="CEP cadastrado" required>
+            </div>
+
+            <div class="form-group">
+            <label for="idRua">Rua</label>
+            <input type="text" id="idRua" disabled value="muda com o cep" required>
+            </div>
+
+            <div class="form-group small-input">
+            <label for="idNro">N°</label>
+            <input type="text" id="idNro" value="nro cadastrado"required>
+            </div>
+
+            <div class="form-group">
+            <label for="idBairro">Bairro</label>
+            <input type="text" id="idBairro" disabled value="muda com o cep" required>
+            </div>
+        </div>
+
+        <button type="submit" class="btn-submit">Salvar</button>
+    </form>
+
+    </div>
+</body>
+</html>

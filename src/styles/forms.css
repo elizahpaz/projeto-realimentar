@@ -1,4 +1,4 @@
-.registration-container, .login-container{
+.registration-container, .login-container, .infos-container{
     background-color: var(--card-background);
     border-radius: 12px;
     box-shadow: 0 8px 25px var(--shadow);
@@ -7,6 +7,17 @@
     width: 100%;
     text-align: center;
     margin: 0 auto 15px;
+}
+
+.profile-pic{
+    margin-bottom: 20px;
+}
+
+.profile-pic img {
+    height: 150px; /* Ajuste o tamanho do seu logo */
+    width: auto;
+    margin: auto;
+    display: block;
 }
 
 .account-type-options {
