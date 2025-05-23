@@ -9,26 +9,39 @@
     <link rel="stylesheet" href="./src/styles/main.css">
     <link rel="stylesheet" href="./src/styles/forms.css">
     <link rel="stylesheet" href="./src/styles/media-queries.css"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
-    <div class="infos-container">
+    <header class="header">
+      <div class="flex">
+        <a href="index.html" class="logo"><img src="src/assets/logo.png" alt="logo da empresa"></a>
+        <nav class="navbar">
+          <a href="index.html">Início</a>
+          <a href="historico.html">Histórico</a>
+          <a href="notificacoes.html">Notificações</a>
+          <a href="perfil.html">Perfil</a>
+        </nav>
+      </div>
+    </header>
 
+    <div class="infos-container">
         <h2>Editar perfil</h2>
         <div class="profile-pic">
             <img src="src/assets/no-photo.png" alt="sem foto de perfil">
-            <input type="file" placeholder="adicionar foto">
+            <input type="file" name="image" accept="image/jpg, image/jpeg, image/png, image/webp">
         </div>
 
         <form id="alterForm" class="formulario">
         <div class="form-group">
-            <label for="idNome">Nome social</label>
-            <input type="text" id="idNome" disabled value="muda com o cnpj"/>
-        </div>
-
-        <div class="form-group">
             <label for="idCnpj">CNPJ</label>
             <input type="text" id="idCnpj" maxlength="18" value="cnpj cadastrado" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="idNome">Nome social</label>
+            <input type="text" id="idNome" disabled value="muda com o cnpj"/>
         </div>
 
         <div class="form-group">

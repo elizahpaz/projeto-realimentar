@@ -1,4 +1,4 @@
-.registration-container, .login-container, .infos-container{
+.registration-container, .login-container, .infos-container, .produto-container{
     background-color: var(--card-background);
     border-radius: 12px;
     box-shadow: 0 8px 25px var(--shadow);
@@ -14,7 +14,7 @@
 }
 
 .profile-pic img {
-    height: 150px; /* Ajuste o tamanho do seu logo */
+    height: 150px;
     width: auto;
     margin: auto;
     display: block;
@@ -94,10 +94,12 @@
 }
 
 .formulario input[type="text"],
+.textarea,
 .formulario input[type="email"],
 .formulario input[type="tel"],
 .formulario input[type="password"],
 .formulario input[list] {
+    resize: none;
     width: 100%;
     padding: 0.9rem 1.2rem;
     border: 1px solid var(--border-color);
@@ -108,14 +110,15 @@
     transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-.formulario input:focus {
+.formulario input:focus, .textarea:focus {
     outline: none;
     border-color: var(--primary-color);
     box-shadow: 0 0 0 3px rgb(76, 92, 174, 0.2);
     background-color: var(--card-background); /* Fundo branco ao focar */
 }
 
-.formulario input::placeholder {
+.formulario input::placeholder, .textarea::placeholder {
+    font-family: var(--font-default);
     color: var(--secondary-color);
 }
 
