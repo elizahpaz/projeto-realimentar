@@ -1,10 +1,7 @@
-// script.js
-
-// --- Logic for produto.html (Form Page) ---
 function setupProductForm() {
-    // Only run this code if the form elements exist on the current page
+
     const produtoForm = document.getElementById('produtoForm');
-    if (!produtoForm) return; // Exit if not on the form page
+    if (!produtoForm) return; // Sai se não estiver na pagina de cadastro de produto
 
     const idNomeProd = document.getElementById('idNomeProd');
     const idQtde = document.getElementById('idQtde');
@@ -12,7 +9,6 @@ function setupProductForm() {
     const imageUpload = document.getElementById('imageUpload');
     const previewImage = document.getElementById('previewImage');
 
-    // Image preview functionality
     imageUpload.addEventListener('change', function() {
         const file = this.files[0];
         if (file) {
@@ -22,77 +18,103 @@ function setupProductForm() {
             };
             reader.readAsDataURL(file);
         } else {
-            previewImage.src = 'https://via.placeholder.com/100?text=No+Photo'; // Reset if no file selected
+            previewImage.src = 'https://via.placeholder.com/100?text=No+Photo';
         }
     });
 
     produtoForm.addEventListener('submit', (event) => {
-        event.preventDefault(); // Prevent default form submission
+        event.preventDefault();
 
         const newProduct = {
             nome: idNomeProd.value,
             quantidade: idQtde.value,
             detalhes: idDetalhes.value,
-            imagem: previewImage.src // Store the base64 string of the image
+            imagem: previewImage.src
         };
 
-        // Get existing products from local storage, or initialize an empty array
+        // Carrega lista de produtos ou cria uma nova
         let products = JSON.parse(localStorage.getItem('products')) || [];
 
-        // Add the new product
+        // Add novo produto
         products.push(newProduct);
 
-        // Save updated products array back to local storage
+        // Salva novos produtos no array
         localStorage.setItem('products', JSON.stringify(products));
 
         alert('Produto adicionado com sucesso!');
 
-        // Optionally, clear the form after submission
+        // Limpa o forms depois de enviado
         produtoForm.reset();
-        previewImage.src = 'https://via.placeholder.com/100?text=No+Photo'; // Reset image preview
+        previewImage.src = 'https://via.placeholder.com/100?text=No+Photo'; // Reseta a imagem
         
-        // Redirect to the products display page
-        window.location.href = 'home-empresa.html'; // Changed to home-empresa.html
+        // Redireciona para a homepage
+        window.location.href = 'home-empresa.html';
     });
 }
 
-// --- Logic for home-empresa.html (Display Page) ---
+// Mostrar produtos na homepage
 function loadProductsDisplay() {
-    // Only run this code if the product list elements exist on the current page
     const productListDiv = document.getElementById('productList');
     const noProductsMessage = document.getElementById('noProductsMessage');
-    if (!productListDiv || !noProductsMessage) return; // Exit if not on the products display page
+    if (!productListDiv || !noProductsMessage) return; // Sai se não estiver na pagina home
 
-    // Retrieve products from local storage
+    // Recupera os produtos cadastrados no arquivo
     let products = JSON.parse(localStorage.getItem('products')) || [];
 
     if (products.length > 0) {
-        productListDiv.innerHTML = ''; // Clear any existing content
+        productListDiv.innerHTML = '';
         products.forEach(product => {
             const productCard = document.createElement('div');
             productCard.classList.add('product-card');
 
             productCard.innerHTML = `
-                <img src="${product.imagem}" alt="${product.nome}">
-                <h3>${product.nome}</h3>
-                <p><strong>Quantidade:</strong> ${product.quantidade}</p>
-                <p><strong>Detalhes:</strong> ${product.detalhes || 'N/A'}</p>
+                <div class="product-details">
+                    <img src="${product.imagem}" alt="${product.nome}">
+                    <h3>${product.nome}</h3>
+                    <p><strong>Quantidade:</strong> ${product.quantidade}</p>
+                    <p><strong>Detalhes:</strong> ${product.detalhes || 'N/A'}</p>
+                </div>
+                <div class="button-group">
+                    <button class="btn btn-delProd" data-id="${product.id}" title="Editar informações do produto">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                    <button class="btn btn-view-interests" data-id="${product.id}" title="Ver ONGs interessadas">
+                        <i class="fas fa-handshake"></i>
+                    </button>
+                </div>
             `;
             productListDiv.appendChild(productCard);
         });
-        noProductsMessage.style.display = 'none'; // Hide message if products are found
+        addEventListenersToProductButtons();
+
+    function addEventListenersToProductButtons() {
+        document.querySelectorAll('.btn-delProd').forEach(button => {
+            button.addEventListener('click', (event) => {
+                const productId = event.currentTarget.dataset.id;
+                alert(`Excluir produto: ${productId}`);
+            });
+        });
+
+        document.querySelectorAll('.btn-view-interests').forEach(button => {
+            button.addEventListener('click', (event) => {
+                const productId = event.currentTarget.dataset.id;
+                alert(`Ver ONGs interessadas no produto: ${productId}`);
+            });
+        });
+    }
+
+        noProductsMessage.style.display = 'none';
     } else {
-        noProductsMessage.style.display = 'block'; // Show message if no products
+        noProductsMessage.style.display = 'block';
     }
 }
 
-// --- Initialize functions based on the current page ---
+//Inicializa a função com base na pagina carregada
 document.addEventListener('DOMContentLoaded', () => {
-    // Check which page we are on and call the relevant function
-    // We'll check for specific IDs unique to each page
-    if (document.getElementById('produtoForm')) { // This ID is specific to produto.html
+    //Checa se a pagina carregou e chama a devida funcao
+    if (document.getElementById('produtoForm')) { //ID da pagina produto.html
         setupProductForm();
-    } else if (document.getElementById('productList')) { // This ID is specific to home-empresa.html
+    } else if (document.getElementById('productList')) { //ID da pagina home-empresa.html
         loadProductsDisplay();
     }
 });

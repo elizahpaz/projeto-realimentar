@@ -72,6 +72,54 @@
     font-size: 0.9em;
     margin-bottom: 5px;
 }
+
+
+.product-card .button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: auto;
+    justify-content: center; /* Centraliza os botões horizontalmente */
+}
+
+/* Ajustes para botões apenas com ícones */
+.product-card .btn {
+    width: 50px; /* Largura fixa para botões de ícone */
+    height: 50px; /* Altura fixa para botões de ícone */
+    padding: 0; /* Remove padding */
+    display: flex; /* Para centralizar o ícone */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    border: none;
+    border-radius: 50%; /* Faz os botões ficarem redondos */
+    cursor: pointer;
+    font-size: 1.4em; /* Aumenta o tamanho do ícone */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    flex-shrink: 0; /* Impede que os botões encolham */
+}
+
+.product-card .btn:hover {
+    transform: scale(1.05);
+}
+
+.product-card .btn-delProd {
+    background-color: #585858;
+    color: white;
+}
+
+.product-card .btn-delProd:hover {
+    background-color: #585858;
+}
+
+.product-card .btn-view-interests {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.product-card .btn-view-interests:hover {
+    background-color: var(--primary-color);
+}
+
+
 .no-products {
     text-align: center;
     font-size: 1.2em;
