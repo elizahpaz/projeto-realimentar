@@ -33,7 +33,7 @@ h2 {
 }
 
 .header .logo img {
-    height: 40px; /* Ajuste o tamanho do seu logo */
+    height: 40px;
     width: auto;
     display: block;
 }
@@ -50,6 +50,107 @@ h2 {
     color: var(--primary-color);
 }
 
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h3 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.hero {
+    background: linear-gradient(rgba(30, 36, 56, 0.6), rgba(48, 48, 48, 0.6)), url('https://st4.depositphotos.com/3591429/25041/i/450/depositphotos_250414084-stock-photo-closeup-diverse-people-joining-hands.jpg') no-repeat center center/cover;
+    text-align: center;
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero p {
+    font-size: 1.5em;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Seções Padrão */
+.section-padded {
+    padding: 60px 0;
+    background-color: var(--light-bg);
+}
+
+.section-padded:nth-of-type(even) {
+    background-color: var(--white);
+}
+
+/* Objetivo */
+#objetivo .objective-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+#objetivo .objective-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#objetivo .objective-text {
+    flex: 1;
+    text-align: justify;
+    font-size: 1.1em;
+}
+
+/* Como Funciona */
+#como-funciona .how-it-works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+#como-funciona .step {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#como-funciona .step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.icon-large {
+    font-size: 3em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+#como-funciona .step h3 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+/* Rodapé */
 footer {
     margin-top: auto;
     padding: 1.5rem 0;
