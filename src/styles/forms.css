@@ -1,3 +1,4 @@
+/*Estilo dos formularios: cadastro, login, cadastro de produto e edição de perfil*/
 .registration-container, .login-container, .infos-container, .produto-container{
     background-color: var(--card-background);
     border-radius: 12px;
@@ -114,7 +115,7 @@
     outline: none;
     border-color: var(--primary-color);
     box-shadow: 0 0 0 3px rgb(76, 92, 174, 0.2);
-    background-color: var(--card-background); /* Fundo branco ao focar */
+    background-color: var(--card-background);
 }
 
 .formulario input::placeholder, .textarea::placeholder {
@@ -132,7 +133,7 @@
 .location-fields {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 1rem 1.5rem; /* Row gap, column gap */
+    gap: 1rem 1.5rem;
     margin-bottom: 1.5rem;
 }
 
@@ -155,7 +156,23 @@
     margin-top: 1rem;
 }
 
-.btn-submit:hover {
+/*Botão de deletar conta*/
+.btn-delete{
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background-color: red;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    margin-top: 1rem;
+}
+
+.btn-submit:hover, .btn-delete:hover {
     background-color: var(--primary-dark);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
