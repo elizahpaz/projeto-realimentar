@@ -75,11 +75,11 @@ function loadProductsDisplay() {
                     <p><strong>Detalhes:</strong> ${product.detalhes || 'N/A'}</p>
                 </div>
                 <div class="button-group">
-                    <button class="btn btn-delProd" data-id="${product.id}" title="Editar informações do produto">
-                        <i class="fas fa-trash-alt"></i>
-                    </button>
                     <button class="btn btn-view-interests" data-id="${product.id}" title="Ver ONGs interessadas">
                         <i class="fas fa-handshake"></i>
+                    </button>
+                    <button class="btn btn-delProd" data-id="${product.id}" title="Editar informações do produto">
+                        <i class="fas fa-trash-alt"></i>
                     </button>
                 </div>
             `;

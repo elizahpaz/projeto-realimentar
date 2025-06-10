@@ -78,23 +78,23 @@
     display: flex;
     gap: 15px;
     margin-top: auto;
-    justify-content: center; /* Centraliza os botões horizontalmente */
+    justify-content: center;
 }
 
-/* Ajustes para botões apenas com ícones */
+
 .product-card .btn {
-    width: 50px; /* Largura fixa para botões de ícone */
-    height: 50px; /* Altura fixa para botões de ícone */
-    padding: 0; /* Remove padding */
-    display: flex; /* Para centralizar o ícone */
-    align-items: center; /* Centraliza verticalmente */
-    justify-content: center; /* Centraliza horizontalmente */
+    width: 50px; 
+    height: 50px; 
+    padding: 0; 
+    display: flex;
+    align-items: center;
+    justify-content: center; 
     border: none;
-    border-radius: 50%; /* Faz os botões ficarem redondos */
+    border-radius: 50%;
     cursor: pointer;
-    font-size: 1.4em; /* Aumenta o tamanho do ícone */
+    font-size: 1.4em;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    flex-shrink: 0; /* Impede que os botões encolham */
+    flex-shrink: 0;
 }
 
 .product-card .btn:hover {
@@ -110,7 +110,7 @@
     background-color: #585858;
 }
 
-.product-card .btn-view-interests {
+.product-card .btn-view-interests, .btn-show-interest {
     background-color: var(--primary-color);
     color: white;
 }
