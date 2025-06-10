@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             noAvailableProductsMessage.style.display = 'none';
             products.forEach(product => {
                 const productCard = document.createElement('div');
-                productCard.classList.add('product-card'); // Pode reutilizar o estilo de card
+                productCard.classList.add('product-card');
                 productCard.setAttribute('data-product-id', product.id);
 
                 productCard.innerHTML = `
